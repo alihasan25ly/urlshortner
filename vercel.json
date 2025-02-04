@@ -6,6 +6,12 @@
         "use": "@vercel/python"
       }
     ],
+    "env": {    
+       "PYTHONPATH": "shortner_app/",
+       "ENV_NAME": "Development",
+       "BASE_URL": "http://127.0.0.1:8000",
+       "DB_URL": "sqlite:///./shortener.db"
+    },
     "routes": [
       {
         "src": "/(.*)",
