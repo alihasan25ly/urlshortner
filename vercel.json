@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "shortner_app/main.py",
+        "src": "index.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "shortner_app/main.py"
+        "dest": "index.py"
       }
     ]
   }

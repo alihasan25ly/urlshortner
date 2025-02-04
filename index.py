@@ -1,0 +1,1 @@
+from shortner_app.main import app
