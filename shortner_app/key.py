@@ -1,7 +1,8 @@
 
 from sqlalchemy.orm import Session
 import secrets, string
-import table, structure
+from table import URL
+from structure import URLBase
 
 def create_random_key(length: int = 5) -> str:
     chars = string.hexdigits + string.ascii_lowercase
@@ -13,9 +14,9 @@ def create_unique_random_key(db: Session) -> str:
         key = create_random_key()
     return key
 
-def create_db_url(db: Session, url: structure.URLBase):
+def create_db_url(db: Session, url: URLBase):
     key = create_random_key()
-    db_url = table.URL(
+    db_url = URL(
         target_url=url.target_url, key=key
     )
     db.add(db_url)
@@ -23,9 +24,9 @@ def create_db_url(db: Session, url: structure.URLBase):
     db.refresh(db_url)
     return db_url
 
-def get_db_url_by_key(db: Session, url_key: str) -> table.URL:
+def get_db_url_by_key(db: Session, url_key: str) -> URL:
     return (
-        db.query(table.URL)
-        .filter(table.URL.key == url_key, table.URL.is_active)
+        db.query(URL)
+        .filter(URL.key == url_key, URL.is_active)
         .first()
     )
