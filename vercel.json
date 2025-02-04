@@ -5,11 +5,6 @@
         "use": "@vercel/python"
       }
     ],
-    "functions": {
-      "shortner_app/main.py": {
-          "maxDuration": 20
-      }
-    },
     "routes": [
       {
         "src": "/(.*)",
