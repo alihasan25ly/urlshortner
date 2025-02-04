@@ -1,4 +1,4 @@
-
+import uvicorn
 import validators, qrcode
 from fastapi import Depends, HTTPException, FastAPI, Request
 from fastapi.responses import Response, RedirectResponse
@@ -68,4 +68,6 @@ def forward_to_target_url(
     else:
         raise_not_found(request)
 
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
