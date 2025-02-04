@@ -3,8 +3,8 @@ from fastapi import Depends, HTTPException, FastAPI, Request
 from fastapi.responses import Response, RedirectResponse
 from fastapi.params import Param
 from sqlalchemy.orm import Session
-from . import key, table, structure
-from .database import SessionLocal, engine
+import key, table, structure
+from database import SessionLocal, engine
 
 app = FastAPI(
     title="Short URL Generator",

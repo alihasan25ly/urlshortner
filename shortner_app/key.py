@@ -1,7 +1,7 @@
 
 from sqlalchemy.orm import Session
 import secrets, string
-from . import table, structure
+import table, structure
 
 def create_random_key(length: int = 5) -> str:
     chars = string.hexdigits + string.ascii_lowercase
