@@ -1,5 +1,4 @@
 {
-    "devCommand": "uvicorn shortner_app.main:app --reload",
     "builds": [
       {
         "src": "shortner_app/main.py",
