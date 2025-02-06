@@ -6,3 +6,4 @@ validators
 pydantic
 pydantic_settings
 qrcode
+pillow
